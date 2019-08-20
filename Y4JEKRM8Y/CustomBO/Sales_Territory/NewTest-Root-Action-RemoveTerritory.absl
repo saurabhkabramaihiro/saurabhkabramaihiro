@@ -1,0 +1,32 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Business Object: NewTest
+		Node: Root
+		Action: RemoveTerritory 
+		
+	Note: 
+	  - To access the elements of the business object node, 
+	    use path expressions, for example, this.<element name>. 
+	  - To use code completion, press CTRL+J. 
+	   
+*/
+
+import ABSL;
+import AP.PC.SalesTerritoryMgmt.Global;
+import AP.Common.GDT;
+import AP.FO.BusinessPartner.Global;
+import AP.CRM.Global;
+
+var terrID : SalesTerritoryID;
+var partyID : PartyID;
+
+terrID.content = "165";
+var terr = SalesTerritory.Retrieve(terrID);
+
+if( terr.IsSet())
+{
+	terr.Account.Delete();
+	var t = "";
+}
+
+//LeanLead.Address.PostalAddressElements.CityName = ZS

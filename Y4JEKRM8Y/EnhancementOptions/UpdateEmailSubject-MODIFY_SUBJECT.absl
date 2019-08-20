@@ -1,0 +1,31 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Enhancement Option: ModifyOutboundEMailSubject
+		Operation: MODIFY_SUBJECT
+
+		Script file signature
+		----------------------------
+		Parameter: InputData of type EmailSubjectModificationInput
+		Returns: ElectronicMessageSubjectText
+
+	Note: 
+	  - To use code completion, press CTRL+J.
+*/
+import AP.Common.GDT;
+import AP.CRM.Global;
+
+if (CustomerQuote.Retrieve(InputData.UUID).IsSet())
+{
+	var dataNew = CustomerQuote.Retrieve(InputData.UUID).ID.content;
+	dataNew="";
+}
+
+var result : ElectronicMessageSubjectText;
+
+var dataCheck = InputData.EMailSubject;
+
+result = InputData.EMailSubject;
+
+
+result = "My Data";
+return result;

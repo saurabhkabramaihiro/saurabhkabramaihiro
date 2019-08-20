@@ -1,0 +1,124 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Business Object: Customer
+		Node: Root
+		Event: BeforeSave 
+		
+	Note: 
+	  - To access the elements of the business object node, 
+	    use path expressions, for example, this.<element name>. 
+	  - To use code completion, press CTRL+J. 
+	  - This script file is mass-enabled, i.e. the keyword "this" 
+	    refers to a collection of node instances.
+	  - The solution uses this script when:
+		- the instance of the business object is being saved.
+		- the instance of the business object is created from other sources like web services, preview screen, and so on.
+*/
+
+import ABSL;
+import AP.Common.Global;
+import BASIS.Global;
+import AP.Common.GDT;
+import AP.PC.IdentityManagement.Global;
+
+var new : BusinessTransactionDocumentID;
+var test  = "123";
+var test1 = "BLA";
+
+var empUUID = Identity.Retrieve(Context.GetCurrentIdentityUUID()).BusinessPartnerUUID;
+var emp = Employee.Retrieve(empUUID);
+
+//var q = Employee.Identification.QueryByEmployeeAttributes;
+//var p = q.CreateSelectionParams();
+//p.Add(q.EmployeeID.content,"I","EQ","E1008");
+//var Emp = q.Execute(p).GetFirst().ToRoot;
+var Emp = Employee.Retrieve(empUUID);
+if(Emp.IsSet())
+{
+	var CurrentOrg = Emp.OrganisationalUnitAssignment.GetFirst();
+	if(CurrentOrg.IsSet())
+	{
+		var orgCompany = CurrentOrg.ToRoot.Company.GetFirst();
+		if(orgCompany.IsSet())
+		{
+			var t = orgCompany.Company.CurrentFunctions.CurrencyCode;
+		}
+	}
+}
+return;
+
+new.AddLeadingZeros().content = test;
+new.AddLeadingZeros().content = test1;
+new.content = test;
+new.content = "";
+return;
+
+var dd = this.GetFirst().BusinessPartnerSolutionExtensions.BusinessPartner.CurrentCommon.SkipIndicator;
+dd = true;
+
+// Convert milliseconds to date
+var result : GLOBAL_DateTime;
+var content = "1563557959";
+
+var trimContent = content.Substring(0,10);
+var trimContentHalfSec =content.Substring(0,10);
+var trimContentHalfSecNumber = Library::Numeric.ParseFromString(trimContentHalfSec);
+var trimContentNumber = Library::Numeric.ParseFromString(trimContent);
+var aSec = 0;
+
+var epochstart = "19700101000000";
+var epochdate = GlobalDateTime.ParseFromString(epochstart);
+var epochstartJustDate =  epochdate.ConvertToDate();
+
+if(trimContentHalfSecNumber > 499)
+{
+	aSec = 1;
+}
+
+var min = trimContentNumber / 60;
+var sec = (trimContentNumber % 60) + aSec; //second value
+var secString = sec.ToString();
+
+var minTrimmedDecimal = min.ToString().TrimRight("1234567890");
+var minTrimmDot = minTrimmedDecimal.TrimRight(".");
+
+var hrs = Library::Numeric.ParseFromString(minTrimmDot) / 60;
+var minRemainder = Library::Numeric.ParseFromString(minTrimmDot) % 60; //minute value
+var minRemainderString = minRemainder.ToString();
+
+var hrsTrimmedDecimal = hrs.ToString().TrimRight("1234567890");
+var hrsTrimmDot = hrsTrimmedDecimal.TrimRight(".");
+
+var dys = Library::Numeric.ParseFromString(hrsTrimmDot) / 24;
+var hrsRemainder = Library::Numeric.ParseFromString(hrsTrimmDot) % 24; //hour value
+var hrsRemainderString = hrsRemainder.ToString();
+
+var dysTrimmedDecimal = dys.ToString().TrimRight("1234567890");
+var dysTrimmDot = dysTrimmedDecimal.TrimRight(".");
+
+dys = Library::Numeric.ParseFromString(dysTrimmDot);
+
+var duration = "P" + dys.ToString() +"D";
+var addDuration = epochstartJustDate.AddDuration(Library::Duration.ParseFromString(duration));
+var dateAsString = addDuration.ToString();
+
+if(secString.Length() == 1)
+{
+	secString = "0" + secString;
+}
+
+if(minRemainderString.Length() == 1)
+{
+	minRemainderString = "0" + minRemainderString;
+}
+
+if(hrsRemainderString.Length() == 1)
+{
+	hrsRemainderString = "0" + hrsRemainderString;
+}
+
+var ePochCalculatedString = dateAsString+ "T" + hrsRemainderString + ":" + minRemainderString + ":" + secString + "Z" ;
+var epochCalcDate = Library::DateTime.ParseFromString(ePochCalculatedString);
+var ePochCalculatedDate = Library::DateTime.ConvertToGlobalDateTime(epochCalcDate);
+
+result = ePochCalculatedDate;

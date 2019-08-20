@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1f370c5c-be7f-4a71-8a71-41954f81b137}</ProjectGuid>
+    <ProjectType>CopernicusProject</ProjectType>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>Y4JEKRM8Y</Name>
+    <RootNamespace>Y4JEKRM8Y</RootNamespace>
+    <RepositoryNamespace>http://refsystems.sap.com/Y4JEKRM8Y_</RepositoryNamespace>
+    <RuntimeNamespacePrefix>Y4JEKRM8Y_</RuntimeNamespacePrefix>
+    <RepositoryRootFolder>/Y4JEKRM8Y_MAIN</RepositoryRootFolder>
+    <DefaultProcessComponent>Y4JEKRM8Y_Y4JEKRM8Y</DefaultProcessComponent>
+    <DevelopmentPackage>$Y4JEKRM8Y_DEV</DevelopmentPackage>
+    <XRepSolution>Y4JEKRM8Y_MAIN</XRepSolution>
+    <BCSourceFolderInXRep>/Y4JEKRM8Y_BC/SRC</BCSourceFolderInXRep>
+    <ProjectSourceFolderinXRep>/Y4JEKRM8Y_MAIN/SRC</ProjectSourceFolderinXRep>
+    <DeploymentUnit>CUSTOMER_RELATIONSHIP_MGMT</DeploymentUnit>
+    <CompilerVersion>1302_FP15</CompilerVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="CustomBO" />
+    <Folder Include="CustomBO\TextCollection" />
+    <Folder Include="CustomBO\Sales_Territory" />
+    <Folder Include="BCOStuff" />
+    <Folder Include="EnhancementOptions" />
+    <Folder Include="XBO" />
+    <Folder Include="ProdMashUp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="COD_MarketingLead.TI.xuicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="COD_Material_Admin.TI.xuicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="COD_TargetGroup.TI.xuicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest-Root-Action-AddTerritory.absl">
+      <DependentUpon>CustomBO\Sales_Territory\NewTest-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest-Root-Action-RemoveTerritory.absl">
+      <DependentUpon>CustomBO\Sales_Territory\NewTest-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest-Root.node">
+      <DependentUpon>CustomBO\Sales_Territory\NewTest.bo</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest.bo">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_OWL.OWL.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_QC.QC.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_QV.QV.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_TI.TI.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_TT.TT.uidataobject">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_WCF.WCF.uiwoc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\Sales_Territory\NewTest_WCView.WCVIEW.uiwocview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText-Root-Event-BeforeSave.absl">
+      <DependentUpon>CustomBO\TextCollection\ZMyText-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText-Root.node">
+      <DependentUpon>CustomBO\TextCollection\ZMyText.bo</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText.bo">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_OWL.OWL.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_QC.QC.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_QV.QV.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_TI.TI.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_TT.TT.uidataobject">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_WCF.WCF.uiwoc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CustomBO\TextCollection\ZMyText_WCView.WCVIEW.uiwocview">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EnhancementOptions\UpdateEmailSubject-MODIFY_SUBJECT.absl">
+      <DependentUpon>EnhancementOptions\UpdateEmailSubject.enht</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="EnhancementOptions\UpdateEmailSubject.enht">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="EnhancementOptions\UpdateEmailSubject.fltr">
+      <DependentUpon>EnhancementOptions\UpdateEmailSubject.enht</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Get Prod Summary.EC.xuicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ODataExtension1.xodata">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ProdMashUp\Get Prod Summary.EC.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ProductPTP.PTP.uicomponent">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XBO\ZCust-Root-Event-BeforeSave.absl">
+      <DependentUpon>XBO\ZCust-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="XBO\ZCust-Root-Validation-OnSave.absl">
+      <DependentUpon>XBO\ZCust-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="XBO\ZCust-Root.node">
+      <DependentUpon>XBO\ZCust.xbo</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="XBO\ZCust.xbo">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XBO\ZTicket-Root-Event-BeforeSave.absl">
+      <DependentUpon>XBO\ZTicket-Root.node</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="XBO\ZTicket-Root.node">
+      <DependentUpon>XBO\ZTicket.xbo</DependentUpon>
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="XBO\ZTicket.xbo">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BACElements.bac">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\ApplicationSegment.QA.uicomponent">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\ApplicationSubSegment.QA.uicomponent">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\APPSEGMENT.bcc">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\CarBrand.QA.uicomponent">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\SUBSEGMENT.bcc">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\ZAPPSEGMENT.bco">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\ZAPPSUBSEGMENT.bco">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\ZCAR.bcc">
+      <SubType>BCSet</SubType>
+    </BCSet>
+    <BCSet Include="..\Y4JEKRM8Y_BC\BCOStuff\ZCAR.bco">
+      <SubType>BCSet</SubType>
+    </BCSet>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

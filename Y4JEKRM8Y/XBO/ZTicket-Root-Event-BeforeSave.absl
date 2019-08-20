@@ -1,0 +1,54 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Business Object: ServiceRequest
+		Node: Root
+		Event: BeforeSave 
+		
+	Note: 
+	  - To access the elements of the business object node, 
+	    use path expressions, for example, this.<element name>. 
+	  - To use code completion, press CTRL+J. 
+	  - This script file is mass-enabled, i.e. the keyword "this" 
+	    refers to a collection of node instances.
+	  - The solution uses this script when:
+		- the instance of the business object is being saved.
+		- the instance of the business object is created from other sources like web services, preview screen, and so on.
+*/
+
+import ABSL;
+import AP.FO.IBase.Global;
+import AP.PC.IdentityManagement.Global;
+
+if( Identity.Retrieve(Context.GetCurrentIdentityUUID()).ID.content != "SKABRA")
+{
+	return;
+}
+else
+{
+	//var iBase = InstalledBase.Create();
+//
+	//if(iBase.IsSet())
+	//{
+		//if(iBase.Description.Count() > 0)
+		//{
+			//iBase.Description.GetFirst().Description.content = "from ABSL";
+			//iBase.Description.GetFirst().Description.languageCode = Context.GetCurrentUserLanguage();
+		//}
+		//else
+		//{
+			//var desc = iBase.Description.Create();
+			//desc.Description.content = "Create ABSL";
+			//desc.Description.languageCode = Context.GetCurrentUserLanguage();
+		//}
+//
+		//if(iBase.Party.Count() <= 0)
+		//{
+			//var party = iBase.Party.Create();
+			//party.PartyKey.PartyID.content = "1042405";
+			//party.PartyKey.PartyTypeCode = "147";
+			//party.RoleCategoryCode = "60";
+			//party.RoleCode = "60";
+		//}
+		//iBase.Activate();
+	//}
+}

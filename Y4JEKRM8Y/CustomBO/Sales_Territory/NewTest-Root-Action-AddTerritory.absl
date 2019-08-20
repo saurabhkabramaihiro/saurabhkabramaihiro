@@ -1,0 +1,31 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Business Object: NewTest
+		Node: Root
+		Action: AddTerritory 
+		
+	Note: 
+	  - To access the elements of the business object node, 
+	    use path expressions, for example, this.<element name>. 
+	  - To use code completion, press CTRL+J. 
+	   
+*/
+
+import ABSL;
+import AP.PC.SalesTerritoryMgmt.Global;
+import AP.Common.GDT; import AP.PlatinumEngineering; import AP.IS.DateAndTime.Global;
+
+var terrID : SalesTerritoryID;
+var partyID : PartyID;
+
+terrID.content = "165";
+var terr = SalesTerritory.Retrieve(terrID);
+if( terr.IsSet())
+{	
+	partyID.content = "1041928";
+	terr.AddAccountToTerritory(partyID);
+	partyID.content = "1041929";
+	terr.AddAccountToTerritory(partyID);
+	partyID.content = "1041931";
+	terr.AddAccountToTerritory(partyID);
+}

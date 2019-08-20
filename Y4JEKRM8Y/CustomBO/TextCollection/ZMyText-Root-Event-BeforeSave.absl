@@ -1,0 +1,25 @@
+﻿/*
+	Add your SAP Business ByDesign scripting language implementation for:
+		Business Object: ZMyText
+		Node: Root
+		Event: BeforeSave 
+		
+	Note: 
+	  - To access the elements of the business object node, 
+	    use path expressions, for example, this.<element name>. 
+	  - To use code completion, press CTRL+J. 
+	  - The solution uses this script when:
+		- the instance of the business object is being saved.
+		- the instance of the business object is created from other sources like web services, preview screen, and so on.
+*/
+
+import ABSL;
+
+//var ttw = "My New vehcile My New vehcile My New vehcile My New vehcile My New vehcile My New vehcile";
+//var new = "Newttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw";
+//this.myNotes.Create().Text.Create().TextContent.Create().Text.content = ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw +  ttw + ttw + ttw + ttw + new+new+new +new+new+new+new+new+new+new+new+new+new+new+new;
+//var tt = "";
+
+var data = "444444444";
+var str = "*44444*";
+data.FindRegex(str);
